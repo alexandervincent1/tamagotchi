@@ -1,41 +1,57 @@
 import java.util.Random;
+import java.util.ArrayList;
 
-public class tamagotchi{
+public class tamagotchi {
 
     private int Hunger;
     private int Boredom;
-    private int Words;
-    private boolean IsAlive;
+    private ArrayList<String> Words = new ArrayList<>();
+    private boolean IsAlive = true;
     private Random Generator;
     public String Name;
-    public void Feed()
-    {
-
+    
+    public tamagotchi() {
+        Words.add("Hej");
+        Hunger = 0;
+        Boredom = 0;
     }
 
-    public void Hi()
-    {
-
+    public void Feed() {
+        Hunger =-4;
     }
 
-    public void Tick()
-    {
-        Boredom ++;
-        Hunger ++;
+    public void Teach(String word) {
+        Words.add(word);
+        Reduceboredom();
     }
 
-    public void PrintStats()
-    {
-
+    public void Hi() {
+        Random random = new Random(); 
+        String randomWord = Words.get(random.nextInt(Words.size()));
+        System.out.println(randomWord);
+        Reduceboredom();
     }
 
-    public boolean GetAlive()
-    {
-        return true;
+    public void Tick() {
+        Boredom++;
+        Hunger++;
+        if (Boredom <=7 && Hunger <= 7) {
+            IsAlive = true;
+        } else {
+            IsAlive = false;
+        }
     }
 
-    private void Reduceboredom()
-    {
+    public void PrintStats() {
+        System.out.println(Name+ " boredom är "+Boredom + " och "+Name +" hunger är "+ Hunger);
+    }
 
+    public boolean GetAlive() {
+        return IsAlive;
+        
+    }
+
+    private void Reduceboredom() {
+        Boredom=-2;
     }
 }

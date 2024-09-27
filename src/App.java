@@ -1,26 +1,37 @@
 import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
-    Scanner tangentbord = new Scanner(System.in);
+        tamagotchi tama = new tamagotchi();
+        Scanner tangentbord = new Scanner(System.in);
+        System.out.println("Välj namn på din tamagotchi");
+        tama.Name = tangentbord.nextLine();
+        while (tama.GetAlive()) {
+            tama.PrintStats();
+            System.out.println(
+                    "\n1.Lär ett nytt ord.\n2.Hälsa på din tamagotchi.\n3.Mata din tamagotchi.\n4.Gör ingeting");
+            int val = tangentbord.nextInt();
+            int kok = 1;
 
-    System.out.println("Välj namn på din tamagotchi");
-    String Name = tangentbord.nextLine();
-    System.out.println("\n1.Lär ett nytt ord.\n2.Hälsa på din tamagotchi.\n3.Mata din tamagotchi.\n4.Gör ingeting");
-    int val = tangentbord.nextInt();
-    if (val==1) {
-        
-    }
+            if (val == 1) {
+                System.out.println("Vad för ord vill du lära " + tama.Name);
+                String nyttOrd = tangentbord.nextLine();
+                nyttOrd = tangentbord.nextLine();
+                tama.Teach(nyttOrd);
+            }
 
-    if (val==2) {
-        
-    }
+            if (val == 2) {
+                tama.Hi();
+            }
 
-    if (val==3) {
-        
-    }
+            if (val == 3) {
+                tama.Feed();
+                System.out.println("Nu har du matat "+tama.Name+" och "+tama.Name+" är nöjd");
+            }
 
-    if (val==4) {
-        
-    }
+            if (val == 4) {
+                tama.Tick();
+            }
+        }
     }
 }
