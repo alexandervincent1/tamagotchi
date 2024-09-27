@@ -20,7 +20,8 @@ public class tamagotchi{
 
     public void Tick()
     {
-        
+        Boredom ++;
+        Hunger ++;
     }
 
     public void PrintStats()
