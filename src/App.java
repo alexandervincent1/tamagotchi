@@ -11,7 +11,6 @@ public class App {
             System.out.println(
                     "\n1.Lär ett nytt ord.\n2.Hälsa på din tamagotchi.\n3.Mata din tamagotchi.\n4.Gör ingeting");
             int val = tangentbord.nextInt();
-            int kok = 1;
 
             if (val == 1) {
                 System.out.println("Vad för ord vill du lära " + tama.Name);

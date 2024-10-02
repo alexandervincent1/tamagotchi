@@ -17,7 +17,12 @@ public class tamagotchi {
     }
 
     public void Feed() {
-        Hunger =-4;
+        if (Hunger >= 4) {
+            Hunger = Hunger-4;
+        }
+            
+        
+        
     }
 
     public void Teach(String word) {
@@ -52,6 +57,9 @@ public class tamagotchi {
     }
 
     private void Reduceboredom() {
-        Boredom=-2;
+        if (Boredom >= 2) {
+            Boredom= Boredom-2;
+        }
+        
     }
 }
