@@ -40,7 +40,7 @@ public class tamagotchi {
     public void Tick() {
         Boredom++;
         Hunger++;
-        if (Boredom <=7 && Hunger <= 7) {
+        if (Boredom <=6 && Hunger <= 6) {
             IsAlive = true;
         } else {
             IsAlive = false;
